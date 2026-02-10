@@ -19,6 +19,13 @@ const quotes = [
     text: "you are allowed to grow at your own pace.",
     author: "bestie energy"
   }
+  const enterBtn = document.getElementById("enterBtn");
+const quoteSection = document.querySelector(".quotes");
+
+enterBtn.addEventListener("click", () => {
+  quoteSection.scrollIntoView({ behavior: "smooth" });
+});
+
 ];
 
 let index = 0;
