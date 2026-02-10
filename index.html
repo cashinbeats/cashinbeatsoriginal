@@ -3,35 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>my mind right now</title>
+  <title>Brain Dump — Money</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>things i’m craving rn 🩷</h1>
-    <p>drag. drop. dream. rearrange.</p>
-  </header>
+  <section class="container">
 
-  <main class="container">
+    <h1 class="title">BRAIN DUMP</h1>
 
-    <!-- Vision Board -->
-    <section id="board">
-      <div class="hint">drop images or text here ✨</div>
-    </section>
+    <div class="layout">
 
-    <!-- Quotes -->
-    <aside id="quotes">
-      <p id="quote-text"></p>
-    </aside>
+      <!-- MAIN BOARD -->
+      <div class="board">
+        <div class="placeholder-text">CREATE….</div>
 
-  </main>
+        <!-- future draggable content goes here -->
+      </div>
 
-  <!-- Controls -->
-  <footer>
-    <input type="file" id="imgInput" accept="image/*" />
-    <button onclick="addText()">+ add text</button>
-  </footer>
+      <!-- QUOTE CARD -->
+      <div class="quote-card">
+        <div class="quote-image"></div>
+        <p id="quote-text"></p>
+      </div>
+
+    </div>
+
+    <!-- CONTROLS (future ready) -->
+    <div class="controls">
+      <button>EMOJIS</button>
+      <button>TEXT</button>
+      <button>PHOTOS</button>
+      <button>STICKERS</button>
+    </div>
+
+  </section>
 
   <script src="script.js"></script>
 </body>
