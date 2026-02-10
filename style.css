@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 8-px 0;
   box-sizing: border-box;
 }
 
@@ -16,8 +16,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   padding: 20px;
 }
