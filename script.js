@@ -1,24 +1,36 @@
 const quotes = [
-  "You are not late. You are loading.",
-  "Dreams don’t need permission.",
-  "Soft things can be powerful.",
-  "You’re becoming someone you once needed.",
-  "Create even when it feels messy.",
-  "You don’t need clarity to begin."
+  {
+    text: "you are not behind. you are just becoming.",
+    author: "your future self"
+  },
+  {
+    text: "it’s okay to rest. healing is also productivity.",
+    author: "your therapist friend"
+  },
+  {
+    text: "you don’t need to be perfect to be powerful.",
+    author: "me, reminding you again"
+  },
+  {
+    text: "soft heart. strong mind. unstoppable soul.",
+    author: "still you"
+  },
+  {
+    text: "you are allowed to grow at your own pace.",
+    author: "bestie energy"
+  }
 ];
 
 let index = 0;
+
 const quoteText = document.getElementById("quote-text");
+const quoteAuthor = document.getElementById("quote-author");
 
-function changeQuote() {
-  quoteText.style.opacity = 0;
-
-  setTimeout(() => {
-    quoteText.textContent = quotes[index];
-    quoteText.style.opacity = 1;
-    index = (index + 1) % quotes.length;
-  }, 400);
+function showQuote() {
+  quoteText.textContent = `"${quotes[index].text}"`;
+  quoteAuthor.textContent = `— ${quotes[index].author}`;
+  index = (index + 1) % quotes.length;
 }
 
-changeQuote();
-setInterval(changeQuote, 5 * 60 * 1000); // every 5 minutes
+showQuote();
+setInterval(showQuote, 5000);
