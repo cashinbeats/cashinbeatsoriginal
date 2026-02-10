@@ -1,101 +1,104 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Georgia", serif;
+  box-sizing: border-box;
 }
 
 body {
+  background: linear-gradient(180deg, #fdf7ff, #f6eaff);
+  font-family: 'Poppins', sans-serif;
+  color: #2c2c2c;
   min-height: 100vh;
-  background: linear-gradient(to bottom , #fde4ea, #f7bfc7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.container {
-  width: 95%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  letter-spacing: 4px;
-  color: rgba(120, 80, 90, 0.6);
-  margin-bottom: 30px;
-}
-
-.layout {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.board {
-  flex: 1 1 600px;
-  min-height: 380px;
-  background: #fff6f8;
-  border-radius: 30px;
-  padding: 30px;
-  position: relative;
-}
-
-.placeholder-text {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  color: #f0b3bf;
-  font-weight: bold;
-  text-align: left;
-}
-
-.quote-card {
-  flex: 1 1 260px;
-  max-width: 300px;
-  background: #fdf1db;
-  border-radius: 30px;
-  padding: 20px;
+/* INTRO */
+.intro {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.subtitle {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* BUTTON */
+.primary-btn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  border-radius: 40px;
+  border: none;
+  background: #c7a6ff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* QUOTES */
+.quotes {
+  padding: 80px 20px;
+  display: flex;
   justify-content: center;
 }
 
-.quote-image {
-  width: 120px;
-  height: 180px;
-  border-radius: 60px;
-  background-image: url("https://images.unsplash.com/photo-1526045431048-6a1c43d6d94e");
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 20px;
+.quote-box {
+  max-width: 600px;
+  background: rgba(255,255,255,0.6);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 #quote-text {
-  font-size: 1rem;
-  color: #3d3d3d;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
-  padding: 10px;
+  font-size: 1.4rem;
 }
 
-.controls {
-  margin-top: 25px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+#quote-author {
+  display: block;
+  margin-top: 15px;
+  opacity: 0.6;
 }
 
-.controls button {
-  background: #e08b97;
-  border: none;
-  color: white;
-  padding: 10px 18px;
+/* BRAIN DUMP */
+.braindump {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.braindump h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 90%;
+  max-width: 700px;
+  height: 200px;
   border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.controls button:hover {
-  background: #d77482;
+  padding: 20px;
+  border: none;
+  resize: none;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255,255,255,0.7);
 }
