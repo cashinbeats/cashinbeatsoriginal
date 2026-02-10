@@ -1,77 +1,24 @@
-const board = document.getElementById("board");
-const imgInput = document.getElementById("imgInput");
-
-// Quotes (personalised)
 const quotes = [
-  "you’re not late. you’re loading.",
-  "small steps still change the timeline.",
-  "this version of you is trying her best.",
-  "romanticise becoming better.",
-  "you are allowed to want more."
+  "You are not late. You are loading.",
+  "Dreams don’t need permission.",
+  "Soft things can be powerful.",
+  "You’re becoming someone you once needed.",
+  "Create even when it feels messy.",
+  "You don’t need clarity to begin."
 ];
 
-let quoteIndex = 0;
+let index = 0;
 const quoteText = document.getElementById("quote-text");
-quoteText.innerText = quotes[0];
 
-// rotate quote every 5 minutes
-setInterval(() => {
-  quoteIndex = (quoteIndex + 1) % quotes.length;
-  quoteText.innerText = quotes[quoteIndex];
-}, 300000);
+function changeQuote() {
+  quoteText.style.opacity = 0;
 
-// Add image
-imgInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = () => {
-    const div = document.createElement("div");
-    div.className = "item";
-    div.style.top = "50px";
-    div.style.left = "50px";
-
-    const img = document.createElement("img");
-    img.src = reader.result;
-
-    div.appendChild(img);
-    makeDraggable(div);
-    board.appendChild(div);
-  };
-  reader.readAsDataURL(file);
-});
-
-// Add text
-function addText() {
-  const text = prompt("write whatever you want 🌷");
-  if (!text) return;
-
-  const div = document.createElement("div");
-  div.className = "item";
-  div.innerText = text;
-  div.style.top = "80px";
-  div.style.left = "80px";
-
-  makeDraggable(div);
-  board.appendChild(div);
+  setTimeout(() => {
+    quoteText.textContent = quotes[index];
+    quoteText.style.opacity = 1;
+    index = (index + 1) % quotes.length;
+  }, 400);
 }
 
-// Drag logic
-function makeDraggable(el) {
-  let offsetX, offsetY;
-
-  el.onmousedown = (e) => {
-    offsetX = e.offsetX;
-    offsetY = e.offsetY;
-
-    document.onmousemove = (e) => {
-      el.style.left = e.pageX - board.offsetLeft - offsetX + "px";
-      el.style.top = e.pageY - board.offsetTop - offsetY + "px";
-    };
-
-    document.onmouseup = () => {
-      document.onmousemove = null;
-    };
-  };
-}
+changeQuote();
+setInterval(changeQuote, 5 * 60 * 1000); // every 5 minutes
